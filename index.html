@@ -1,6 +1,6 @@
 <html>
 <body>
-    blank page 7
+    blank page 8
 
     <script src="https://stg-us3-web-chat.nativechat.com/pr16-2.5.0/sdk/nativechat.js"></script>
     <link href="https://stg-us3-web-chat.nativechat.com/pr16-2.5.0/sdk/nativechat.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,10 @@
     session: {
       clear: true
     },
-    chatServerInstance: "stg-us3-"
+    chatServerInstance: "stg-us3-",
+    showLocationPicker: false,
+    showFilePicker: false
+    
   };
 
   window.NativeChat.load({
@@ -26,10 +29,8 @@
     display: {
         mode: "modal"
     },
-    chat: {
-        showLocationPicker: false,
-        showFilePicker: false
-    }
+    chat: chatSettings
+      
   });
 </script>
     
