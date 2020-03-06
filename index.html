@@ -1,8 +1,9 @@
 <html>
 <body>
     blank page 4
-<script src="https://stg-us3-web-chat.nativechat.com/pr16-2.5.0/sdk/nativechat.js"></script>
-    <link href="https://stg-us3-web-chat.nativechat.com/pr16-2.5.0/sdk/nativechat.css" rel="stylesheet" type="text/css">
+
+    <script src="https://stg-us3-web-chat.nativechat.com/2.4.0/sdk/nativechat.js"></script>
+    <link href="https://stg-us3-web-chat.nativechat.com/2.4.0/sdk/nativechat.css" rel="stylesheet" type="text/css">
     <script>
   var chatSettings = {
     bot: {
@@ -18,18 +19,17 @@
     },
     chatServerInstance: "stg-us3-"
   };
-        
+
   window.NativeChat.load({
     id: "kcChatWindow",
     origin: "",
     display: {
         mode: "modal"
     },
-    chat: {
-      showLocationPicker: false,
-      showFilePicker: false
-    } 
+    chat: chatSettings
   });
 </script>
+    
+    
 </body>
 </html>
