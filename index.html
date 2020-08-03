@@ -8,7 +8,7 @@
 
 <body>
   <h1>
-  STAGING
+  STAGING https - 
   <button onclick="test()">Click me to perform a test request</button>
   </h1>
 </body>
@@ -16,7 +16,7 @@
 <script>
   const test = () => {
     const token = "85f3437a-8eab-4aa6-b5d1-1b8671abc09d";
-    const channelUrl = "http://staging-api.nativechat.com/v1/bots/1cf38909d80f4cc1a9963eef/channels/bd46fd5e-774b-43fe-b0f7-3c22bc36ab47/rest/rest";
+    const channelUrl = "https://staging-api.nativechat.com/v1/bots/1cf38909d80f4cc1a9963eef/channels/bd46fd5e-774b-43fe-b0f7-3c22bc36ab47/rest/rest";
     const request = new Request(channelUrl, {
         method: 'POST',
         headers: new Headers({
