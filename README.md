@@ -1,2 +1,2 @@
 # chat2
-test chat2
+test custom web widget
