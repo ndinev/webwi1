@@ -1,35 +1,34 @@
-<html>
-<body>
-    
-    <h1>July 23 multiselect 2.7.8<h1>
-    
-<script src="https://staging-web-chat.nativechat.com/2.7.8/sdk/nativechat.js"></script>
-    <link href="https://staging-web-chat.nativechat.com/2.7.8/sdk/nativechat.css" rel="stylesheet" type="text/css">
-    <script>
-  var chatSettings = {
-    bot: {
-      id: "1cf38909d80f4cc1a9963eef"
-    },
-    channel: {
-      id: "a36b6819-7fe4-4373-94ce-363ce12d42f2",
-      token: "98aa00a7-6f1c-40bf-961b-199b07d6bc47"
-    },
-    googleApiKey: "your-google-maps-API-key",
-    session: {
-      clear: true
-    },
-    chatServerInstance: "staging-"
-  };
+<!DOCTYPE html>
+<html lang="en">
 
-  window.NativeChat.load({
-    id: "kcChatWindow",
-    origin: "",
-    display: {
-        mode: "modal"
-    },
-    chat: chatSettings
-  });
-</script>
-        
+<head>
+  <meta charset="utf-8">
+  <title>Test REST channel</title>
+</head>
+
+<body>
+  <button onclick="test()">Click me to perform a test request</button>
 </body>
+
+<script>
+  const test = () => {
+    const token = "85f3437a-8eab-4aa6-b5d1-1b8671abc09d";
+    const channelUrl = "http://localhost:3000/v1/bots/1cf38909d80f4cc1a9963eef/channels/bd46fd5e-774b-43fe-b0f7-3c22bc36ab47/rest/rest";
+    const request = new Request(channelUrl, {
+        method: 'POST',
+        headers: new Headers({
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        }),
+        body: '{"sender":{"id":"95dbe07d-0d0f-470b-9434-01367f4f3659"},"message":{"text":"hi"}}',
+    });
+    fetch(request)
+      .then(response => {
+        console.log(`Response: body: ${response.body} status: ${response.status} statusText: ${response.statusText} headers: ${response.headers}`);
+        response.body.getReader().read().then((buf) => {
+          alert(`Response: ${JSON.stringify(response)} ; ${new TextDecoder("utf-8").decode(buf.value)}; ${response.status}`);
+        });
+      });
+  }
+</script>
 </html>
