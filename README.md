@@ -1,2 +1,2 @@
-# chat2
+# webwi2
 test custom web widget
